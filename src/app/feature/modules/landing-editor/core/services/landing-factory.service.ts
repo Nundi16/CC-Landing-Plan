@@ -1,4 +1,4 @@
-import { ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 import { TestLandingComponent } from '../component/test-landing/test-landing.component';
 import { LandingTemplateBase } from '../landing-template-base';
 import { TestLandingBComponent } from '../component/test-landing-b/test-landing-b.component';
@@ -7,10 +7,10 @@ import { TestLandingBComponent } from '../component/test-landing-b/test-landing-
   providedIn: 'root'
 })
 export class LandingFactoryService {
-  private ref?:ComponentRef<unknown>;
+  private componentRef:ComponentRef<LandingTemplateBase>;
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  createComponent(componentType: string, controlContainerRef:ViewContainerRef, previewContainerRef: ViewContainerRef) {
+  createComponent(componentType: string, controlContainerRef:ViewContainerRef, previewContainerRef: ViewContainerRef):ComponentFactory<LandingTemplateBase> {
     let component: any;
 
     switch (componentType) {
@@ -24,15 +24,6 @@ export class LandingFactoryService {
         throw new Error(`Component type ${componentType} is not supported.`);
     }
 
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-    const componentRef = previewContainerRef.createComponent(componentFactory);
-    (componentRef.instance as LandingTemplateBase).render(controlContainerRef);
-    this.ref = componentRef;
-  }
-
-  resetComponent(){
-    (this.ref.instance as LandingTemplateBase).destroy();
-    this.ref.destroy();
-    this.ref = undefined;
+    return this.componentFactoryResolver.resolveComponentFactory(component);
   }
 }

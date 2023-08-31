@@ -6,25 +6,22 @@ import { TestLandingComponent } from './core/component/test-landing/test-landing
 import { TestLandingBComponent } from './core/component/test-landing-b/test-landing-b.component';
 import { ServiceLocatorService } from './core/services/service-locator.service';
 import { DataService } from './core/services/data.service';
-import { ControlBuilderService } from './core/services/control-builder.service';
 import { LandingFactoryService } from './core/services/landing-factory.service';
-
-
+import {FormsModule} from '@angular/forms'
 
 @NgModule({
-  providers:[DataService,ControlBuilderService,LandingFactoryService],
   declarations: [
     EditorLayoutComponent,
     TextEditorComponent,
     TestLandingComponent,
-    TestLandingBComponent],
-  imports: [
-    CommonModule
+    TestLandingBComponent,
   ],
-  exports:[EditorLayoutComponent]
+  imports: [CommonModule,FormsModule],
+  providers: [DataService, LandingFactoryService],
+  exports: [EditorLayoutComponent],
 })
-export class LandingEditorModule { 
-  constructor(private injector: Injector){
+export class LandingEditorModule {
+  constructor(private injector: Injector) {
     ServiceLocatorService.injector = this.injector;
   }
 }
