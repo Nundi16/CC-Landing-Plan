@@ -1,7 +1,9 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { LandingTemplateBase } from '../../landing-template-base';
 import { ControlBuilderService } from '../../services/control-builder.service';
 import { TextEditorComponent } from '../controlls/text-editor/text-editor.component';
+import { DataService } from '../../services/data.service';
+import { payload } from '../../interfaces/payload';
 
 @Component({
   selector: 'app-test-landing',
@@ -11,10 +13,9 @@ import { TextEditorComponent } from '../controlls/text-editor/text-editor.compon
 export class TestLandingComponent extends LandingTemplateBase implements OnInit,AfterViewInit {
   a:string;
   b:string;
-  
 
-  constructor(builder: ControlBuilderService) { 
-    super(builder);
+  constructor() { 
+    super();
   }
 
   ngOnInit(): void {

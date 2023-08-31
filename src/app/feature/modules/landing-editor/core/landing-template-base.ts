@@ -1,11 +1,15 @@
+
 import { ControlBuilderService } from './services/control-builder.service';
-import { ViewContainerRef } from '@angular/core';
+import { Component, Inject, inject, Optional, ViewContainerRef } from '@angular/core';
+import { ServiceLocatorService } from './services/service-locator.service';
 
-export abstract class LandingTemplateBase{
 
+export class LandingTemplateBase{
+    private builder: ControlBuilderService;
     protected buildControls(builder: ControlBuilderService){};
 
-    constructor(private builder: ControlBuilderService) {
+    constructor() {
+        this.builder = ServiceLocatorService.injector.get(ControlBuilderService);
         this.buildControls(this.builder);
     }
 
