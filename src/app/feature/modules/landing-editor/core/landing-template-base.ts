@@ -1,6 +1,6 @@
 
 import { ControlBuilderService } from './services/control-builder.service';
-import { Component, Inject, inject, Optional, ViewContainerRef } from '@angular/core';
+import { ViewContainerRef } from '@angular/core';
 import { ServiceLocatorService } from './services/service-locator.service';
 
 

@@ -2,8 +2,6 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { LandingTemplateBase } from '../../landing-template-base';
 import { ControlBuilderService } from '../../services/control-builder.service';
 import { TextEditorComponent } from '../controlls/text-editor/text-editor.component';
-import { DataService } from '../../services/data.service';
-import { payload } from '../../interfaces/payload';
 
 @Component({
   selector: 'app-test-landing',

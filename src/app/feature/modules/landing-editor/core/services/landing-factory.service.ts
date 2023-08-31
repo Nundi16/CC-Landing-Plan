@@ -1,5 +1,4 @@
 import { ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
-import { LandingEditorModule } from '../../landing-editor.module';
 import { TestLandingComponent } from '../component/test-landing/test-landing.component';
 import { LandingTemplateBase } from '../landing-template-base';
 import { TestLandingBComponent } from '../component/test-landing-b/test-landing-b.component';
