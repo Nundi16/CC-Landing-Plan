@@ -1,0 +1,15 @@
+<div class="editor-layout">
+    <div class="editor">
+        <ng-container #editor>
+            <select (change)="onSelectChange($event.target.value)">
+                <option value="TypeA">TypeA</option>
+                <option value="TypeB">TypeB</option>
+              </select>
+        </ng-container>
+    </div>
+    <div class="preview">
+        <ng-container #preview>
+
+        </ng-container>
+    </div>
+</div>

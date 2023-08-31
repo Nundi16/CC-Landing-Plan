@@ -1,0 +1,18 @@
+:root{
+    height: 100%;
+    position: relative;
+}
+.editor-layout{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: editor preview;
+    height: 100%;
+}
+.editor{
+    padding: 15px;
+    border: 1px solid gray;
+}
+.preview{
+    margin: 20px;
+}
