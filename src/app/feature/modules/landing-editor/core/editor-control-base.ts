@@ -1,6 +1,6 @@
-import { controlConfig } from "./interfaces/control-config";
+import { dataAccessor } from "./interfaces/data-accessor";
 
-export abstract class EditorControlBase{
+export abstract class EditorControlBase<T>{
     public Id: number;
-    public config: controlConfig
+    public dataAccessor: dataAccessor<T>
 }

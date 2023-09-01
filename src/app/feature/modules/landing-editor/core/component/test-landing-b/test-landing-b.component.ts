@@ -9,12 +9,15 @@ import { ControlBuilderService } from '../../services/control-builder.service';
   providers:[ControlBuilderService]
 })
 export class TestLandingBComponent extends LandingTemplateBase implements OnInit {
-
+  
   constructor(injector:Injector ) {
     super(injector);
   }
-
+  
   ngOnInit(): void {
   }
-
+  
+  buildControls(builder: ControlBuilderService) {
+    
+  }
 }

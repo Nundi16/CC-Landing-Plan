@@ -6,7 +6,7 @@ import { EditorControlBase } from '../../../editor-control-base';
   templateUrl: './text-editor.component.html',
   styleUrls: ['./text-editor.component.scss']
 })
-export class TextEditorComponent extends EditorControlBase implements OnInit {
+export class TextEditorComponent extends EditorControlBase<string> implements OnInit {
 
   constructor() { 
     super();
@@ -17,6 +17,6 @@ export class TextEditorComponent extends EditorControlBase implements OnInit {
 
   onKeyPress(event:KeyboardEvent){
     const inputValue = (event.target as HTMLInputElement).value;
-    this.config.ref[this.config.property]= inputValue;
+    this.dataAccessor.set(inputValue);
   }
 }

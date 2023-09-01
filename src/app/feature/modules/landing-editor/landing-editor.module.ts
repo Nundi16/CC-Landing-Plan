@@ -5,7 +5,6 @@ import { TextEditorComponent } from './core/component/controlls/text-editor/text
 import { TestLandingComponent } from './core/component/test-landing/test-landing.component';
 import { TestLandingBComponent } from './core/component/test-landing-b/test-landing-b.component';
 import { ServiceLocatorService } from './core/services/service-locator.service';
-import { DataService } from './core/services/data.service';
 import { LandingFactoryService } from './core/services/landing-factory.service';
 import {FormsModule} from '@angular/forms'
 
@@ -17,7 +16,7 @@ import {FormsModule} from '@angular/forms'
     TestLandingBComponent,
   ],
   imports: [CommonModule,FormsModule],
-  providers: [DataService, LandingFactoryService],
+  providers: [LandingFactoryService],
   exports: [EditorLayoutComponent],
 })
 export class LandingEditorModule {

@@ -7,27 +7,25 @@ import { TextEditorComponent } from '../controlls/text-editor/text-editor.compon
   selector: 'app-test-landing',
   templateUrl: './test-landing.component.html',
   styleUrls: ['./test-landing.component.scss'],
-  providers:[ControlBuilderService]
+  providers: [ControlBuilderService],
 })
-export class TestLandingComponent extends LandingTemplateBase implements OnInit,AfterViewInit {
-  a:string;
-  b:string;
-
-  constructor(injector:Injector) { 
+export class TestLandingComponent
+  extends LandingTemplateBase
+  implements OnInit, AfterViewInit
+{
+  constructor(injector: Injector) {
     super(injector);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
+
+  buildControls(builder: ControlBuilderService): void {
+    builder.addControl(TextEditorComponent,"header");
+
+    builder.addControl(TextEditorComponent,"article");
+
+    builder.addDataService(this.dataService);
   }
-
-  ngAfterViewInit():void{
-    console.log(this.a)
-  }
-
-  protected buildControls(builder: ControlBuilderService): void {
-    builder.addControl({type:TextEditorComponent,ref:this,property:'a'})
-    builder.addControl({type:TextEditorComponent,ref:this,property:'b'})
-
-  }
-
 }
