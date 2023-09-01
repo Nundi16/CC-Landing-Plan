@@ -46,7 +46,7 @@ export class ControlBuilderService implements OnDestroy {
           
         },
       };
-      dynamicComponentRef.instance.Id = this.globalId++;
+      dynamicComponentRef.instance.id = this.globalId++;
       
       controlContainer.insert(dynamicComponentRef.hostView);
       this._controlRefs.push(dynamicComponentRef);
