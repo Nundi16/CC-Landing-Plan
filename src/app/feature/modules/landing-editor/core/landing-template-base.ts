@@ -1,6 +1,6 @@
 
 import { ControlBuilderService } from './services/control-builder.service';
-import { Component, Injector, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, Injector, ViewContainerRef } from '@angular/core';
 import { DataService } from './services/data.service';
 
 @Component({
@@ -25,6 +25,7 @@ export abstract class LandingTemplateBase{
 
         this.dataService.load();
     }
+    
     public renderEditor(controlContainer:ViewContainerRef){
         this.builder.buildComponents(controlContainer);
     }

@@ -8,18 +8,20 @@ import { EditorControlBase } from '../../../editor-control-base';
 })
 export class TextEditorComponent extends EditorControlBase<string> implements OnInit {
 
-  public value:string = '';
+  public get value():string{
+    return this.dataAccessor.get();
+  };
+
+  public set value(val:string){
+    this.dataAccessor.set(val);
+  };
 
   constructor() { 
     super();
   }
 
   ngOnInit(): void {
-    this.value = this.dataAccessor.get();
+    
   }
 
-  onKeyPress(event:KeyboardEvent){
-    const inputValue = (event.target as HTMLInputElement).value;
-    this.dataAccessor.set(inputValue);
-  }
 }

@@ -1,0 +1,12 @@
+<div class="conatiner">
+    <div class="row">
+        <input [(ngModel)]="this.data.title" type="text" name="" [id]="'card-section-input' + id">
+    </div>
+    <div class="row" *ngFor="let card of data.cards;let i = index">
+        <input [(ngModel)]="card.title" type="text" name="" [id]="card.title + i">
+        <input [(ngModel)]="card.text" type="text" name="" [id]="card.title + i">
+    </div>
+    <div class="row">
+        <button class="btn btn-light add-btn" (click)="addCard()">+</button>
+    </div>
+</div>

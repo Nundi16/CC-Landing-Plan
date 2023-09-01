@@ -10,8 +10,21 @@ export class DataService{
 
   public load(){
     this.payload = {
-      header:'Header',
-      article:'Ez egy hoszabb szöveg'
+      header: "Teszt Cím",
+      article: "Ez egy teszt cikk.",
+      cardSection1: {
+        title: 'Card section title',
+        cards: [
+          {
+            title: "Kártya 1",
+            text: "Ez egy teszt kártya 1."
+          },
+          {
+            title: "Kártya 2",
+            text: "Ez egy teszt kártya 2."
+          }
+        ]
+      }
     }
   };
 

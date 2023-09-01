@@ -10,7 +10,7 @@ import { ControlBuilderService } from '../../services/control-builder.service';
 })
 export class TestLandingBComponent extends LandingTemplateBase implements OnInit {
   
-  constructor(injector:Injector ) {
+  constructor(injector:Injector) {
     super(injector);
   }
   
@@ -18,6 +18,7 @@ export class TestLandingBComponent extends LandingTemplateBase implements OnInit
   }
   
   buildControls(builder: ControlBuilderService) {
-    
+    builder.addDataService(this.dataService);
+    builder.addCardSection('cardSection1');
   }
 }

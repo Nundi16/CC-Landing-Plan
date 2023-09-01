@@ -1,4 +1,4 @@
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
+import { ComponentFactory, ComponentFactoryResolver, Injectable } from '@angular/core';
 import { TestLandingComponent } from '../component/test-landing/test-landing.component';
 import { LandingTemplateBase } from '../landing-template-base';
 import { TestLandingBComponent } from '../component/test-landing-b/test-landing-b.component';
@@ -7,10 +7,10 @@ import { TestLandingBComponent } from '../component/test-landing-b/test-landing-
   providedIn: 'root'
 })
 export class LandingFactoryService {
-  private componentRef:ComponentRef<LandingTemplateBase>;
+
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
-  createComponent(componentType: string, controlContainerRef:ViewContainerRef, previewContainerRef: ViewContainerRef):ComponentFactory<LandingTemplateBase> {
+  createComponentFactory(componentType: string):ComponentFactory<LandingTemplateBase> {
     let component: any;
 
     switch (componentType) {
