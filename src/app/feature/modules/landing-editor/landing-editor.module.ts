@@ -9,17 +9,20 @@ import { LandingFactoryService } from './core/services/landing-factory.service';
 import {FormsModule} from '@angular/forms';
 import { CardSectionEditorComponent } from './core/component/controls/card-section-editor/card-section-editor.component'
 import {CardSectionComponent} from './core/component/sections/card-section/card-section.component'
+import { ColorPickerModule } from 'ngx-color-picker';
+import { ColorPickerComponent } from './core/component/controls/color-picker/color-picker.component';
 
 @NgModule({
   declarations: [
     EditorLayoutComponent,
     TextEditorComponent,
+    ColorPickerComponent,
     TestLandingComponent,
     TestLandingBComponent,
     CardSectionEditorComponent,
     CardSectionComponent
   ],
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,ColorPickerModule],
   providers: [LandingFactoryService],
   exports: [EditorLayoutComponent],
 })

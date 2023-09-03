@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Injector, OnInit } from '@angular/core';
 import { LandingTemplateBase } from '../../landing-template-base';
 import { ControlBuilderService } from '../../services/control-builder.service';
 import { TextEditorComponent } from '../controls/text-editor/text-editor.component';
+import { ColorPickerComponent } from '../controls/color-picker/color-picker.component';
 
 @Component({
   selector: 'app-test-landing',
@@ -22,9 +23,10 @@ export class TestLandingComponent
   ngAfterViewInit(): void {}
 
   buildControls(builder: ControlBuilderService): void {
+    
     builder.addControl(TextEditorComponent,"header");
-
     builder.addControl(TextEditorComponent,"article");
+    builder.addControl(ColorPickerComponent, "headerBgColor");
 
     builder.addDataService(this.dataService);
   }

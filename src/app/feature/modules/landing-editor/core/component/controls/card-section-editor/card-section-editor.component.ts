@@ -18,6 +18,6 @@ export class CardSectionEditorComponent extends EditorControlBase<cardSection> i
   }
 
   addCard(){
-    this.data.cards.push({text:"test",title:"Csincsilla"});
+    this.data.cards.push({text:"test",title:"Csincsilla",bgColor:"#FF0000"});
   }
 }

@@ -1,5 +1,6 @@
 export interface payload{
     header: string,
+    headerBgColor:string,
     article: string,
     cardSection1: cardSection
 }
@@ -10,8 +11,9 @@ export interface cardSection{
 }
 
 export interface card{
-    title: string
-    text:string
+    title: string,
+    text:string,
+    bgColor:string
 }
 
 export function isCardSection(obj: any): obj is cardSection {
@@ -24,5 +26,6 @@ export function isCardSection(obj: any): obj is cardSection {
 export function isCard(obj:any): obj is card{
     return obj &&
     typeof obj.title === 'string' &&
-    typeof obj.text === 'string'
+    typeof obj.text === 'string' &&
+    typeof obj.bgColor === 'string'
 }
