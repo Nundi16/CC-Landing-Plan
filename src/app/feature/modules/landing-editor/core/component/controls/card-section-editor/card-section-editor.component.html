@@ -5,12 +5,10 @@
     <div class="row" *ngFor="let card of data.cards;let i = index">
         <input [(ngModel)]="card.title" type="text" name="" [id]="card.title + i">
         <input [(ngModel)]="card.text" type="text" name="" [id]="card.title + i">
-        <input 
-            [(colorPicker)]="card.bgColor"
-            [id]="card.bgColor + i" 
-            [style.background]="card.bgColor"
-            type="button"
-            class="rounded-circle col-2 m-2">
+        <app-color-picker [(data)]="card.bgColor">
+
+        </app-color-picker>
+        
     </div>
     <div class="row">
         <button class="btn btn-light add-btn" (click)="addCard()">+</button>

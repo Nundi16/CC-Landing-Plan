@@ -8,14 +8,6 @@ import { EditorControlBase } from '../../../editor-control-base';
 })
 export class ColorPickerComponent extends EditorControlBase<string> implements OnInit {
 
-  public get value():string{
-    return this.dataAccessor.get();
-  };
-
-  public set value(val:string){
-    this.dataAccessor.set(val);
-  };
-
   constructor() { 
     super();
   }
@@ -23,5 +15,4 @@ export class ColorPickerComponent extends EditorControlBase<string> implements O
   ngOnInit(): void {
     
   }
-
 }
